@@ -1,0 +1,229 @@
+/*
+ 
+*/
+/*________  Dark Purple  ________  */
+
+
+.navbar,
+.pager li>a:hover,
+.pager li > a,
+.pager li > span,
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.blog-tags a:hover,
+.blog-tags a:focus,
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover,
+.list-group-item,
+.nav-pills>li>a,
+.img-hover,
+.panel-heading a.collapsed,
+.label.default,
+.btn-primary.focus,
+.btn-primary:focus,
+.bg-color2,
+.dropdown-menu,
+.img-description,
+.our-team2 .social li a:hover,
+.our-team1 .social li a:hover,
+.btn:focus,
+.owl-next:hover,
+.owl-prev:hover,
+.blog-prev:hover .hover {
+    background-color: #613161;
+}
+.smaller.social-media a i:hover,
+hr,
+.hr,
+.back-to-top i:hover,
+ul.custom li:before,
+.section-heading hr:after,
+.nav .open>a,
+.nav .open>a:hover,
+.breadcrumb a,
+.navbar-custom li:after,
+.nav.nav-tabs > li.active > a:focus,
+.nav.nav-tabs>li.active>a,
+.nav.nav-tabs > li.active > a:hover,
+.nav.nav-tabs>li>a,
+.serviceBox .icon-bg {
+    color: #613161;
+}
+.comment,
+.small-heading,
+.search-group .form-control,
+.social-media a i:hover,
+.img-blog img:hover,
+#elements h3.sub-header,
+.section-heading hr,
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th,
+.nav-tabs,
+.our-team1 .pic,
+#call-to-action {
+    border-color: #613161;
+}
+/*________  Pink  ________  */
+
+.smaller.social-media a i,
+.post-info i,
+a:hover,
+a:focus,
+#about .media i,
+i,
+.blog-post h3 a:hover,
+.our-team3 .social i:hover,
+.page-header h2,
+.small-heading,
+.bounce1:after,
+.social-media a i,
+.back-to-top i,
+.nav.nav-tabs > li.active > a:focus,
+.nav.nav-tabs>li.active>a,
+.nav.nav-tabs>li>a:hover,
+.bootstrap-datetimepicker-widget table td.day:hover,
+.bootstrap-datetimepicker-widget table td.hour:hover,
+.bootstrap-datetimepicker-widget table td.minute:hover,
+.bootstrap-datetimepicker-widget table td.second:hover,
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover,
+.bootstrap-datetimepicker-widget .picker-switch td span,
+.testimonial .description:before {
+    color: #F970A4;
+}
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover,
+.open>.dropdown-toggle.btn-primary:focus,
+.open>.dropdown-toggle.btn-primary:hover,
+.pager li > a:hover,
+.pager li > a:focus,
+.blog-tags a,
+.date-category,
+.pagination>li>a,
+.pagination>li>span,
+.input-group.date .input-group-addon,
+.owl-theme .owl-dots .owl-dot span,
+.owl-theme .owl-dots .owl-dot span:before,
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span,
+#elements h3.sub-header,
+.panel-heading a,
+.panel-heading a:hover,
+.our-team2 .social li a,
+.our-team1 .social li a,
+.owl-next,
+.owl-prev,
+.panel-title a:after,
+.panel-title a.collapsed:after,
+.back-to-top:hover {
+    background-color: #F970A4;
+}
+.elements h5,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover,
+.form-control:focus,
+select.form-control,
+.img-border,
+.navbar,
+.box_icon > .icon > .image,
+.nav.nav-tabs > li.active > a:focus,
+.nav.nav-tabs>li.active>a,
+.nav.nav-tabs>li>a:hover,
+.nav.nav-tabs > li.active,
+.our-team1:hover .pic {
+    border-color: #F970A4;
+}
+.nav.nav-tabs li.active:before {
+    border-top-color: #F970A4;
+}
+/* Gradient Button */
+
+.btn,
+.btn .btn-primary {
+   background: linear-gradient(270deg, rgb(249, 112, 164), rgb(249, 112, 164), rgba(34, 34, 34, 0), rgba(34, 34, 34, 0));
+   background-size: 300% 300%;
+}
+/*________  Light Purple ________  */
+
+.alert.alert-success,
+.back-to-top,
+.btn,
+.btn-primary:active:focus, .btn-primary:active:hover, 
+.spinner > div,
+.btn .btn-primary,
+.our-team3 .social,
+.nav-pills>li.active>a,
+.nav.nav-pills > li > a:focus,
+.nav.nav-pills > li > a:hover,
+.nav.nav-pills > li > .active,
+.our-team2 .team-content,
+.panel-title a.collapsed:hover:after,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover,
+.blog-prev .date,
+.bg-color1,
+.navbar-custom ul li a:after {
+    background-color: #BC87BF;
+}
+.btn, .btn-blue{
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-red{
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.blog-post,
+.sub-heading span,
+.well {
+    border-color: #BC87BF;
+}
+a,
+.bootstrap-datetimepicker-widget table td span:hover,
+blockquote:before,
+.our-team1 .social li a:hover,
+.our-team1 .post,
+.navbar-custom ul.nav li a:hover,
+.navbar-custom .nav > .active > a,
+.social-media a i:hover,
+.features:hover i,
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    color: #BC87BF;
+}
+/*________  light Gray  ________  */
+
+footer,
+.bg-lightcolor1,
+.serviceBox:hover,
+.our-team3:hover {
+    background-color: #F6F6F6;
+}
+.jumbotron,
+#elements h5.sub-header,
+.img-circle,
+.blog-post,
+.sidebar,
+.accordion-group {
+    border-color: #F6F6F6;
+}
+/*________  light Pink  ________  */
+
+.bg-lightcolor2,
+.jumbo-heading,
+.menu-item-price,
+.our-team3,
+#preloader {
+    background-color: #f8eff4;
+}

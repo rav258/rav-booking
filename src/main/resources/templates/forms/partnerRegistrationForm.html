@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JustVisit</title>
+    <div th:replace="/fragments/styles::style"></div>
+</head>
+<div th:replace="/fragments/navbar::navbar"></div>
+
+
+<body>
+<div style="margin-top: 130px">
+
+    <div class="col-lg-5 col-lg-offset-1 col-md-12">
+        <h2 class="caa_heading">Create an account</h2>
+        <div id="contact_form">
+            <div class="form-group">
+                <form th:action="@{/registration}"
+                      th:object="${partner}" method="POST" >
+                    <label>First Name<span class="required">*</span>
+                        <input type="text" th:field="*{firstName}"
+                               class="form-control" required/>
+                    </label>
+                    <label>Last Name<span class="required">*</span>
+                        <input type="text" th:field="*{lastName}"
+                               class="form-control" required/>
+<!--<div >-->
+<!--                        <select th:object="${cat}">-->
+<!--                            <option th:each="i : ${cat.name}" th:value="${i}" th:text="${i}">-->
+<!--                            </option>-->
+<!--                        </select>-->
+<!--</div>-->
+
+
+
+                    </label>
+                    <label>Email<span class="required">*</span>
+                        <input type="email" th:field="*{email}"
+                               class="form-control" required/>
+                    </label>
+                    <label>Password<span class="required">*</span>
+                        <input type="password" th:field="*{password}"
+                               class="form-control" required/>
+                    </label>
+                    <div style="margin-top: 10px" class="form-group">
+                        <div class="col-sm-6 controls">
+                            <button type="submit" class="btn btn-default ">
+                                <span> <i class="fa fa-user btn_icon"></i> Create an account </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-5 col-lg-offset-1 col-md-12">
+        <h2 class="caa_heading">Sign in</h2>
+        <div id="contact_form2">
+            <div class="form-group">
+                <form th:action="@{/authenticateTheUser}"
+                      method="POST" class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-xs-15">
+                            <div>
+                                <!-- Check for login error -->
+                                <div th:if="${param.error}">
+                                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                        Invalid username and password.
+                                    </div>
+                                </div>
+                                <!-- Check for logout -->
+                                <div th:if="${param.logout}">
+                                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                        You have been logged out.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label>Email<span class="required">*</span>
+                        <input type="email" name="username" class="form-control"/>
+                    </label>
+                    <label>Password<span class="required">*</span>
+                        <input type="password" name="password" class="form-control"/>
+                    </label>
+                    <div style="margin-top: 10px" class="form-group">
+                        <div class="col-sm-6 controls">
+                            <button type="submit" class="btn btn-default ">
+                                <span> <i class="fa fa-user btn_icon"></i> Sign in </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div th:replace="/fragments/js_scripts::js"></div>
+</body>
+</html>

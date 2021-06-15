@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JustVisit</title>
+    <div th:replace="/fragments/styles::style"></div>
+</head>
+<body id="page-top">
+<div id="page-width">
+    <div th:replace="/fragments/header::header"></div>
+    <div th:replace="/fragments/navbar::navbar"></div>
+    <div id="main" class="home">
+        <div th:replace="/fragments/intro::intro"></div>
+        <div th:replace="/fragments/categories::categories"></div>
+        <div th:replace="/fragments/newsletter::newsletter"></div>
+        <div th:replace="/fragments/footer::footer"></div>
+    </div>
+    <div th:replace="/fragments/js_scripts::js"></div>
+</div>
+</body>
+</html>

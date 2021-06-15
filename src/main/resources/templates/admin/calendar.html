@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> | Calendar</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+<!--  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">-->
+  <link th:href="@{../../static/plugins/fontawesome-free/css/all.min.css}" rel="stylesheet" />
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
+  <link th:href="@{../../static/plugins/fullcalendar/main.css}" rel="stylesheet" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../static/plugins/adminlte.min.css">
+  <link th:href="@{../../static/plugins/adminlte.min.css}" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <div class="sidebar">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a class="d-block">Rafal</a>
+        </div>
+      </div>
+
+      
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                
+              </p>
+            </a>          
+          </li>
+
+          
+
+
+          
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link active">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right"></span>
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Draggable Events</h4>
+                </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    <div class="external-event bg-success">Lunch</div>
+                    <div class="external-event bg-warning">Go home</div>
+                    <div class="external-event bg-info">Do homework</div>
+                    <div class="external-event bg-primary">Work on UI design</div>
+                    <div class="external-event bg-danger">Sleep tight</div>
+                    <div class="checkbox">
+                      <label for="drop-remove">
+                        <input type="checkbox" id="drop-remove">
+                        remove after drop
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Create Event</h3>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                    <ul class="fc-color-picker" id="color-chooser">
+                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+                  <div class="input-group">
+                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                    <div class="input-group-append">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                    <!-- /btn-group -->
+                  </div>
+                  <!-- /input-group -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<link th:href="@{../../static/plugins/jquery/jquery.min.js}" rel="stylesheet" />
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link th:href="@{../../static/plugins/bootstrap/js/bootstrap.bundle.min.js}" rel="stylesheet" />
+<!-- jQuery UI -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<link th:href="@{../../static/plugins/jquery-ui/jquery-ui.min.js}" rel="stylesheet" />
+
+<!-- fullCalendar 2.2.5 -->
+<script src="../plugins/moment/moment.min.js"></script>
+<link th:href="@{../../static/plugins/moment/moment.min.js}" rel="stylesheet" />
+<script src="../plugins/fullcalendar/main.js"></script>
+<link th:href="@{../../static/plugins/fullcalendar/main.js}" rel="stylesheet" />
+
+<!-- Page specific script -->
+<script src="../../static/plugins/calendar.js"></script>
+<link th:href="@{../../static/plugins/calendar.js}" rel="stylesheet" />
+</body>
+</html>

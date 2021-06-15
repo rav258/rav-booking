@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- header -->
+<th:block th:fragment="header">
+  <div class="slideshow">
+    <!-- images path in the CSS file -->
+    <div class="slideshow-image">
+      <!-- slide1.jpg -->
+    </div>
+    <div class="slideshow-image">
+      <!-- slide2.jpg -->
+    </div>
+    <div class="slideshow-image">
+      <!-- slide3.jpg -->
+    </div>
+    <div class="slideshow-image">
+      <!-- slide4.jpg -->
+    </div>
+  </div>
+<header class="masthead container">
+  <div class="hidden-xs hidden-sm">
+    <div class="pull-left">
+      <div class="main-logo">
+        <a href="index.html">
+          <!-- logo  -->
+          <img src="img/logo_light.png" alt="" class="img-responsive">
+        </a>
+      </div>
+    </div>
+    <!-- social icons -->
+    <div class="pull-right">
+      <div class="social-media smaller">
+        <a href="https://twitter.com" title=""><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com" title=""><i class="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com" title=""><i class="fa fa-linkedin"></i></a>
+        <a href="https://pl.pinterest.com" title=""><i class="fa fa-pinterest"></i></a>
+        <a href="https://www.instagram.com/" title=""><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+</th:block>
+<!-- /header -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JustVisit</title>
+    <div th:replace="/fragments/styles::style"></div>
+</head>
+<body id="page-top">
+<div id="page-width">
+    <div th:replace="/fragments/header::header"></div>
+    <div th:replace="/fragments/navbar::navbar"></div>
+    <div id="main" class="home">
+        <section id="elements">
+            <div class="row margin1">
+                <h3 class="sub-header">Add Category</h3>
+                <div class="">
+                    <h5 class="sub-header"></h5>
+                    <form action="#" th:action="@{/save}"
+                          th:object="${categories}" method="POST">
+                        <input type="hidden" th:field="*{id}"/>
+                        <input id="name" type="text" th:field="*{name}"
+                               class="form-control mb-4 col-4" placeholder="Category Name" required>
+                        <input type="text" th:field="*{description}"
+                               class="form-control mb-4 col-4" placeholder="Description" required>
+                        <input type="text" th:field="*{icon}"
+                               class="form-control mb-4 col-4" placeholder="icon name" required>
+                        <input type="text" th:field="*{pictureUrl}"
+                               class="form-control mb-4 col-4" placeholder="picture url" required min="0">
+                        <button type="submit" class="btn btn-success col-2">Save</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div th:replace="/fragments/footer::footer"></div>
+    </div>
+    <div th:replace="/fragments/js_scripts::js"></div>
+</div>
+</body>
+</html>

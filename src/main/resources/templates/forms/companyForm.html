@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>JustVisit</title>
+  <div th:replace="/fragments/styles::style"></div>
+</head>
+<body id="page-top">
+<div id="page-width">
+  <div th:replace="/fragments/header::header"></div>
+  <div th:replace="/fragments/navbar::navbar"></div>
+  <div id="main" class="home">
+
+    <div class="col-lg-5 col-lg-offset-1 col-md-12">
+
+      <section id="elements">
+        <div class="row margin1">
+          <h3 class="sub-header">Add Company</h3>
+          <div class="">
+            <h5 class="sub-header"></h5>
+            <form action="#" th:action="@{/companies/save}"
+                  th:object="${companies}" method="POST">
+              <input type="hidden" th:field="*{id}"/>
+              <input id="name" type="text" th:field="*{name}"
+                     class="form-control mb-4 col-4" placeholder="Category Name" required>
+              <input type="text" th:field="*{location}"
+                     class="form-control mb-4 col-4" placeholder="Description" required>
+              <input type="text" th:field="*{logoPicture}"
+                     class="form-control mb-4 col-4" placeholder="icon name" required>
+
+              <button type="submit" class="btn btn-success col-2">Save</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+    <div th:replace="/fragments/footer::footer"></div>
+  </div>
+  <div th:replace="/fragments/js_scripts::js"></div>
+</div>
+</body>
+</html>
+

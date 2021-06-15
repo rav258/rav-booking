@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<th:block th:fragment="newsletter">
+  <!-- Newsletter -->
+  <section id="newsletter" class="small-section bg-color1">
+    <div class="container text-center text-light">
+      <div class="col-md-6">
+        <h4>Subscribe to our Newsletter</h4>
+      </div>
+      <div class="col-md-6">
+        <!-- Form -->
+        <div id="mc_embed_signup">
+          <!-- your form adresss in the line bellow -->
+          <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <div class="input-group">
+                  <input class="form-control input-lg required email" type="email" value="" name="EMAIL" placeholder="Your email here" id="mce-EMAIL">
+                  <span class="input-group-btn">
+                        <button class="btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                        </span>
+                </div>
+                <!-- Subscription results -->
+                <div id="mce-responses" class="mailchimp">
+                  <div class="alert alert-danger response" id="mce-error-response"></div>
+                  <div class="alert alert-success response" id="mce-success-response"></div>
+                </div>
+              </div>
+              <!-- /mc-fiel-group -->
+            </div>
+            <!-- /mc_embed_signup_scroll -->
+          </form>
+          <!-- /form ends -->
+        </div>
+        <!-- /mc_embed_signup -->
+      </div>
+      <!-- /col-md-6 -->
+    </div>
+    <!-- /container -->
+  </section>
+  <!-- /Section ends -->
+</th:block>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Admin</title>
+    <meta charset="utf-8"/>
+    <div sec:authorize="isAuthenticated()"></div>
+    <title> | Calendar</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link th:href="@{../../static/plugins/fontawesome-free/css/all.min.css}" rel="stylesheet"/>
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="/plugins/fullcalendar/main.css">
+    <link th:href="@{../../static/plugins/fullcalendar/main.css}" rel="stylesheet"/>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/plugins/adminlte.min.css">
+    <link th:href="@{../../static/plugins/adminlte.min.css}" rel="stylesheet"/>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="" class="brand-link">
+            <span class="brand-text font-weight-light">JustVisit</span>
+        </a>
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                </div>
+
+            </div>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <li class="nav-item" th:each="navbarVar : ${navbar}">
+                        <a th:href="${navbarVar.getHrefRedirect()}" class="nav-link">
+                            <i th:class="${navbarVar.getIconClassName()}"></i>
+                            <p th:text="${navbarVar.getCategoryName()}"></p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="content-wrapper">
+<div>
+
+
+
+
+    </div>
+</div>
+<script src="../plugins/jquery/jquery.min.js"></script>
+<link th:href="@{../../static/plugins/jquery/jquery.min.js}" rel="stylesheet"/>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link th:href="@{../../static/plugins/bootstrap/js/bootstrap.bundle.min.js}" rel="stylesheet"/>
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<link th:href="@{../../static/plugins/jquery-ui/jquery-ui.min.js}" rel="stylesheet"/>
+<script src="../plugins/moment/moment.min.js"></script>
+<link th:href="@{../../static/plugins/moment/moment.min.js}" rel="stylesheet"/>
+<script src="../plugins/fullcalendar/main.js"></script>
+<link th:href="@{../../static/plugins/fullcalendar/main.js}" rel="stylesheet"/>
+<script src="../../static/plugins/calendar.js"></script>
+<link th:href="@{../../static/plugins/calendar.js}" rel="stylesheet"/>
+
+
+</body>
+</html>

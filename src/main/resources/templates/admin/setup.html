@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Admin</title>
+    <meta charset="utf-8"/>
+    <div sec:authorize="isAuthenticated()"></div>
+    <title> | Calendar</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link th:href="@{../../static/plugins/fontawesome-free/css/all.min.css}" rel="stylesheet"/>
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="/plugins/fullcalendar/main.css">
+    <link th:href="@{../../static/plugins/fullcalendar/main.css}" rel="stylesheet"/>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/plugins/adminlte.min.css">
+    <link th:href="@{../../static/plugins/adminlte.min.css}" rel="stylesheet"/>
+
+    <script type="text/javascript" th:src="@{js/modal.js}" src="../static/js/modal.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="" class="brand-link">
+            <!--            <span class="brand-text font-weight-light" th:text="${partner.company.name} ? 'Default'" ></span>-->
+        </a>
+        <div class="sidebar">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                </div>
+                <div class="info">
+                    <a class="d-block" sec:authentication=""><p th:each="partnersDetails : ${partner}">
+                        <p th:text="${partner.firstName}"></p></a>
+                </div>
+            </div>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <li class="nav-item" th:each="navbarVar : ${navbar}">
+                        <a th:href="${navbarVar.getHrefRedirect()}" class="nav-link">
+                            <i th:class="${navbarVar.getIconClassName()}"></i>
+                            <p th:text="${navbarVar.getCategoryName()}"></p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="content-wrapper">
+        <!--        <div th:with="someVariable=${'lastName'}">-->
+        <div class="container">
+            <div class="card card-info">
+                <div class="card-header">
+                    <h3 class="card-title">Details</h3>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover">
+
+                        <tr>
+                            <th>First Name</th>
+                            <td th:text="${partner.getFirstName()}"></td>
+                            <td>
+                                <a class="btn btn-primary eBtn" data-toggle="modal" data-target="#exampleModal">Edit</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Last Name</th>
+                            <td th:text="${partner.getLastName()}"></td>
+                            <td>
+                                <a class="btn btn-primary eBtn" data-toggle="modal" data-target="#lastNameModal">Edit</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Last Name</th>
+                            <td th:text="${partner.getCompany().getName()}"></td>
+                            <td>
+                                <a class="btn btn-primary eBtn" data-toggle="modal" data-target="#companyModal">Edit</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="myForm">
+                <form th:action="@{/registerPartner/savePartner}" method="post" th:object="${partner}">
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update First Name</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body"><input type="hidden" th:field="*{id}"/>
+                                    <input type="text" th:field="*{firstName}"
+                                           class="form-control mb-4 col-4" placeholder="" required>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="save"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="lastNameModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="lastNameModalLabel">Update Last Name</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body"><input type="hidden" th:field="*{id}"/>
+                                    <input type="text" th:field="*{lastName}"
+                                           class="form-control mb-4 col-4" placeholder="" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="save"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="companyModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="emailModalLabel">Update Company Name</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body"><input type="hidden" th:field="*{id}"/>
+                                    <input type="text" th:field="*{company.name}"
+                                           class="form-control mb-4 col-4" placeholder="" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="save"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+<link th:href="@{/static/plugins/jquery/jquery.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/js/modal.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/plugins/bootstrap/js/bootstrap.bundle.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/admin/js/bootstrap.bundle.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/admin/js/bootstrap.bundle.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/admin/js/bootstrap.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/admin/js/bootstrap.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/plugins/jquery-ui/jquery-ui.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/plugins/moment/moment.min.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/plugins/fullcalendar/main.js}" rel="script" type="text/javascript"/>
+<link th:href="@{/static/plugins/calendar.js}" rel="script" type="text/javascript"/>
+</body>
+</html>

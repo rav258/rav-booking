@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<th:block th:fragment="navbar">
+  <nav id="nav">
+    <div class="navbar navbar-custom  navbar-static text-center">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display  -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars"></i>
+          </button>
+          <div class="navbar-brand hidden-md hidden-lg">
+            <a href="index.html">
+              <!-- logo  -->
+              <img src="img/logo_light.png" alt="" class="img-responsive">
+            </a>
+          </div>
+          <!--/navbar-brand -->
+        </div>
+        <!--/navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling  -->
+        <div class="collapse navbar-collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/registerPartner}">For Partners</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Featured venues</a></li>
+
+            <li><a href="#">Contact</a></li>
+            <li><a th:href="@{/list}">Admin</a></li>
+            <li><div sec:authentication="name"></div></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.navbar -->
+  </nav>
+</th:block>
+
+</body>
+</html>

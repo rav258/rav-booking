@@ -1,0 +1,12 @@
+
+#page-width {
+	max-width:100%;
+}
+#page-width .nav,
+#page-width #nav,
+#page-width .masthead,
+#page-width .slideshow,
+#page-width .footer,
+#page-width #newsletter{
+	max-width:100%;
+}
